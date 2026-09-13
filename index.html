@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10131a">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+<title>Trading Discipline Guard</title>
+</head>
+<body>
+<div class="app">
+<header><div><small>TRADING DISCIPLINE GUARD</small><h1>Control de disciplina</h1></div><button id="settingsBtn" class="icon">⚙️</button></header>
+
+<main>
+<section id="dashboard" class="screen active">
+  <div class="hero card">
+    <div class="ring"><span id="score">100</span><small>/100</small></div>
+    <div><span id="statusDot" class="dot green"></span><b id="status">LISTO PARA OPERAR</b><p id="mindset">Tu objetivo no es ganar el día. Es ejecutar tu plan.</p></div>
+  </div>
+  <div class="grid">
+    <div class="stat card"><small>P&L HOY</small><strong id="pnl">$0</strong><span id="rPnl">0.00R</span></div>
+    <div class="stat card"><small>OPERACIONES</small><strong id="trades">0/3</strong><span>máximo diario</span></div>
+  </div>
+  <div id="lockBox" class="notice hidden"></div>
+  <button id="newTrade" class="primary">Evaluar nueva operación</button>
+  <button id="endSession" class="secondary">Cerrar sesión</button>
+  <div class="card quote">“−1R con buena ejecución = buen día de proceso.”</div>
+</section>
+
+<section id="trade" class="screen">
+  <button class="back" data-screen="dashboard">← Volver</button>
+  <h2>Evaluación pre-operación</h2>
+  <p class="muted">Responde sin negociar contigo mismo.</p>
+  <div id="questions"></div>
+  <button id="evaluate" class="primary">Evaluar operación</button>
+  <div id="decision" class="decision hidden"></div>
+</section>
+
+<section id="history" class="screen">
+  <h2>Historial</h2><p class="muted">Tus últimas sesiones guardadas en este dispositivo.</p>
+  <div id="historyList"></div>
+</section>
+
+<section id="stats" class="screen">
+  <h2>Estadísticas</h2>
+  <div class="grid">
+    <div class="stat card"><small>SESIONES</small><strong id="sCount">0</strong></div>
+    <div class="stat card"><small>DISCIPLINA MEDIA</small><strong id="avgScore">—</strong></div>
+    <div class="stat card"><small>RESULTADO TOTAL</small><strong id="totalPnl">$0</strong></div>
+    <div class="stat card"><small>OPERACIONES</small><strong id="totalTrades">0</strong></div>
+  </div>
+  <div class="card"><h3>Últimas sesiones</h3><div id="bars"></div></div>
+</section>
+
+<section id="settings" class="screen">
+  <button class="back" data-screen="dashboard">← Volver</button>
+  <h2>Configuración</h2>
+  <label>Instrumento<input id="instrument" value="MNQ"></label>
+  <label>Contratos<input id="contracts" type="number" min="1" value="1"></label>
+  <label>Pérdida máxima diaria ($)<input id="maxLoss" type="number" value="100"></label>
+  <label>Objetivo ($)<input id="target" type="number" value="150"></label>
+  <label>Objetivo extendido ($)<input id="stretch" type="number" value="200"></label>
+  <label>Máximo de operaciones<input id="maxTrades" type="number" min="1" value="3"></label>
+  <label>Pausa después de pérdida (min)<input id="pause" type="number" min="0" value="10"></label>
+  <label>Inicio de horario<input id="start" type="time" value="09:30"></label>
+  <label>Fin de horario<input id="end" type="time" value="16:00"></label>
+  <button id="saveSettings" class="primary">Guardar configuración</button>
+</section>
+</main>
+
+<nav>
+<button data-screen="dashboard">🏠<span>Inicio</span></button>
+<button data-screen="history">📒<span>Historial</span></button>
+<button data-screen="stats">📊<span>Stats</span></button>
+<button data-screen="settings">⚙️<span>Ajustes</span></button>
+</nav>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

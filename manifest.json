@@ -1,0 +1,10 @@
+{
+  "name":"Trading Discipline Guard",
+  "short_name":"TD Guard",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#0b0e13",
+  "theme_color":"#10131a",
+  "lang":"es",
+  "description":"Control profesional de disciplina y overtrading para traders."
+}
